@@ -1,10 +1,11 @@
 import React, {useState, useEffect } from 'react'
 import {Link} from 'react-router-dom'
+import '../styles/AllCharacters.css'
 
 function AllCharacters() {
   const [ characters, setCharacters] = useState([])
 
-  useEffect(() => {
+  useEffect(() =>{
   fetch("https://rickandmortyapi.com/api/character")
   .then((res)=>res.json())
   .then((data)=>setCharacters(data.results))
@@ -15,8 +16,7 @@ function AllCharacters() {
       {characters.map((character)=>{
         return(
           <div key={character.id}>
-            <p>{character.name}</p>
-            <link to={'/character/${character.id}'}><img src={character.image} alt={character.name}></img></link>
+           <Link to={'/character/${character.id}'}><img src={character.image} alt={character.name}></img></Link>
           </div>
         )
       })}
