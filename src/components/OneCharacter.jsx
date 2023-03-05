@@ -28,4 +28,4 @@ function OneCharacter() {
   )
 }
 
-export default OneCharacter
+export default OneCharacter 
